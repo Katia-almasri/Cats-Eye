@@ -1,0 +1,87 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Soul — Video Analyzer SPA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <h1>Video Soul <span class="spark">✨</span></h1>
+          <p class="tag">Paste • Preview • Analyze — friendly frontend demo</p>
+        </div>
+        <div class="wallet-area">
+          <button id="connectWalletBtn" class="btn wallet">
+            Connect Wallet
+          </button>
+          <div id="walletInfo" class="wallet-info">Not connected</div>
+        </div>
+      </header>
+
+      <section class="controls">
+        <label class="input-row">
+          <input
+            id="videoUrl"
+            type="url"
+            placeholder="Paste a video URL (mp4/webm) or YouTube link"
+            aria-label="Video URL"
+          />
+          <button id="previewBtn" class="btn">Preview ▶</button>
+        </label>
+
+        <div class="samples">
+          <span>Try samples:</span>
+          <button
+            class="sample"
+            data-url="https://www.w3schools.com/html/mov_bbb.mp4"
+          >
+            Big Buck Bunny
+          </button>
+          <button
+            class="sample"
+            data-url="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+          >
+            Flower
+          </button>
+          <button
+            class="sample"
+            data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          >
+            YouTube sample
+          </button>
+        </div>
+
+        <div class="actions">
+          <button id="analyzeBtn" class="btn primary">Analyze Video</button>
+          <button id="resetBtn" class="btn ghost">Reset</button>
+        </div>
+
+        <div id="status" class="status">
+          No analysis yet — paste a video and press Analyze.
+        </div>
+      </section>
+
+      <section class="preview">
+        <div class="player" id="player" aria-live="polite">
+          Video preview will appear here
+        </div>
+
+        <aside class="results" aria-live="polite">
+          <h3>Analysis</h3>
+          <div id="analysisResults" class="results-list">
+            <div class="empty">No results yet</div>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="foot">
+        Made with care — frontend-only demo. Ask me to hook it to a real
+        analysis backend when you're ready.
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
